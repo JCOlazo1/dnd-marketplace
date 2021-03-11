@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
 import MenuItem from '../menu-items/menu-item.component'
 
 const Directory = () => {
@@ -36,12 +35,6 @@ const Directory = () => {
     ])
   }, [])
 
-  const getData = async () => {
-    const res = await axios.get(url);
-    console.log(res.data);
-  }
-  
-
   return (
     <div className='directory-menu'>
       {
@@ -52,9 +45,6 @@ const Directory = () => {
           />
         ))
       }
-      {console.log(sections)}
-      {console.log("end of sections")}
-      <button onClick={getData}>Fetch</button>
     </div>
   )
 }

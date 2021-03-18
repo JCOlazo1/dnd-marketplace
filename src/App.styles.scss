@@ -1,6 +1,10 @@
 body {
   background-color: #282c34;
   color: #ccc;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Cormorant Unicase";
 
   .header {
     align-self: center;

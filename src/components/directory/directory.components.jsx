@@ -24,19 +24,21 @@ const Directory = () => {
         imageUrl: 'https://static.planetminecraft.com/files/image/minecraft/project/2020/607/13405543_l.jpg',
         id: 3,
         size: 'large',
-        linkUrl: 'potions'
+        linkUrl: 'apothecary'
       },  
       {
         title: 'Spell Store',
         imageUrl: 'https://i.pinimg.com/236x/b5/8b/0f/b58b0f5122ecd8b728005e15be90378a--anime-scenery-fantasy-inspiration.jpg',
         id: 4,
-        linkUrl: 'magic'
+        linkUrl: 'spellstore'
       }
     ])
   }, [])
 
   return (
     <div className='directory-menu'>
+      <>
+      <h1>WELCOME TO THE MARKETPLACE</h1>
       {
         sections.map(({ id, ...otherStuff }) => (
           <MenuItem 
@@ -45,6 +47,7 @@ const Directory = () => {
           />
         ))
       }
+      </>
     </div>
   )
 }

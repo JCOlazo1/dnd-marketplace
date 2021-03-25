@@ -1,5 +1,7 @@
 import React from 'react'
 
+import ItemDropdown from '../../components/item-dropdown/item-dropdown'
+
 import './general-store.scss'
 
 const GeneralStore = () => {
@@ -10,7 +12,7 @@ const GeneralStore = () => {
         <div className='cart-list'>
           {/* <Cart /> */}
         </div>
-          {/* <ItemDropdown /> */}
+          <ItemDropdown />
           {/* <Quantity /> */}
           {/* <TotalTab /> */}
       </div>

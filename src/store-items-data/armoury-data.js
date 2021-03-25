@@ -1,0 +1,60 @@
+const ARMOURY_DATA = {
+  armour: {
+    title: 'armour',
+    items: [
+      {
+        id: 1,
+        name: 'Cloth Armour',
+        price: 25,
+        description: '+1 AC, light armour'
+      },
+      {
+        id: 2,
+        name: 'Chain Shirt',
+        price: 75,
+        description: '+2 AC, light armour'
+      },
+      {
+        id: 3,
+        name: 'Breastplate',
+        price: 125,
+        description: '+4 AC, heavy armour'
+      }
+    ]
+  },
+  weapons: {
+    title: 'weapons',
+    items: [
+      {
+        id: 1,
+        name: 'Dagger',
+        price: 5,
+        description: '1d4 damage, one-handed'
+      },
+      {
+        id: 2,
+        name: 'Shortsword',
+        price: 8,
+        description: '1d6 damage, one-handed'
+      },
+      {
+        id: 3,
+        name: 'Javelin',
+        price: 10,
+        description: '1d6 damage, two-handed'
+      },
+      {
+        id: 4,
+        name: 'Longsword',
+        price: 10,
+        description: '1d6 damage, two-handed'
+      },
+      {
+        id: 5,
+        name: 'Handaxe',
+        price: 10,
+        description: '1d6 damage, one-handed'
+      }
+    ]
+  }
+}

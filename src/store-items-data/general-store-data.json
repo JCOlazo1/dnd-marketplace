@@ -2,37 +2,44 @@
   {
     "id": 1,
     "name": "Glass Bottle",
-    "price": 1
+    "price": 1,
+    "description": "500ml of whatever you want inside."
   },
   {
     "id": 2,
     "name": "Flask",
-    "price": 1
+    "price": 1,
+    "description": "You cant 'flask' for a better price ahaha..aha.ha.."
   },
   {
     "id": 3,
     "name": "Hammer",
-    "price": 1
+    "price": 1,
+    "description": "For carpentry... please use this only for carpentry."
   },
   {
     "id": 4,
-    "name": "Mirror",
-    "price": 3
+    "name": "Hand Mirror",
+    "price": 3,
+    "description": "To look at yourself with"
   },
   {
     "id": 5,
     "name": "Rope (25ft)",
-    "price": 3
+    "price": 3,
+    "description": "Rope. 25ft."
   },
   {
     "id": 6,
     "name": "Shovel",
-    "price": 3
+    "price": 3,
+    "description": "Dig"
   },
   {
     "id": 7,
     "name": "Torch",
-    "price": 1
+    "price": 1,
+    "description": "Non-Darkvision folks use these"
   },
   {
     "id": 9,
@@ -43,7 +50,8 @@
   {
     "id": 10,
     "name": "Fishing Rod",
-    "price": 5
+    "price": 5,
+    "description": "Catch fish"
   }
 ]
   

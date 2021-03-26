@@ -8,9 +8,9 @@ const ItemDropdown = ({
   onChange 
 }) => {
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("")
   const ref = useRef(null);
 
+  // useEffect for auto-closing dropdown when clicking outside dropdown
   useEffect(() => {
     document.addEventListener("click", close);
     return () => document.removeEventListener("click", close);
@@ -21,31 +21,13 @@ const ItemDropdown = ({
     setOpen(e && e.target === ref.current)
   }
 
-  const filter = (options) => {
-    return options.filter(
-      (option) => 
-        option[label].toLowerCase().indexOf(query.toLowerCase()) > -1)
-  }
-
-  const displayValue = () => {
-    if(query.length > 0) return query;
-    if(value) return value[label];
-    return "";
-  }
-
   return (
     <div className='dropdown'>
       <div className="control" onClick={() => setOpen(prev => !prev)}> {/* TOGGLE EFFECT */}
         <div className="selected-value" >
-          <input 
-            type='text' 
+          <input  
             ref={ref}
             placeholder={value ? value[label] : prompt}
-            value={displayValue}
-            onChange={e => {
-              setQuery(e.target.value)
-              onChange(null)
-            }}
             onClick={() => setOpen(prev => !prev)}
           />
         </div>
@@ -53,12 +35,11 @@ const ItemDropdown = ({
       </div>
       <div className={`options ${open ? "open" : null}`}>
         {
-          filter(items).map((option) => (
+          items.map((option) => (
           <div 
             key={option.id} 
             className={`option ${value === option ? "selected" : null}`}
             onClick={() => {
-              setQuery("");
               onChange(option);
               setOpen(false);
             }}
@@ -73,11 +54,10 @@ const ItemDropdown = ({
 
 export default ItemDropdown
 
-// This holds specific data based on the store clicked
-// General Store: consumables, adventure needs(rope, rations), etc.
-// Armoury: armour, weapons, shields, etc.
-// Might need REDUX to hold a store and then use a switch based on which
-// store was selected so it knows which data to pull from
+// TODO:
+/*
+    - Toggle or select between different categories of category
+    - ie: Armoury: [weapons][armour] --> find out how to select each one
+    - maybe 'store sections' --> at the armoury store front, choosing 'weapons' takes you to 'weapons' page
 
-// Or have ItemDropdown accept a 'category' parameter so it knows which
-// data to display
+*/

@@ -3,10 +3,14 @@ import React, { useState } from 'react'
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import GENERAL_STORE_DATA from '../../store-items-data/general-store-data.json'
 
-import './general-store.scss'
+import './general-store.styles.scss'
 
 const GeneralStore = () => {
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState([])
+
+  const isEmpty = (obj) => {
+    return Object.keys(obj).length === 0;
+  }
 
   return (
     <div className='overview'>
@@ -15,19 +19,29 @@ const GeneralStore = () => {
         <div className='cart-list'>
           {/* <Cart /> */}
         </div>
-          <div style={{ width: 200}}>
+          <div className='dropdown'>
             <ItemDropdown 
               items={GENERAL_STORE_DATA} 
-              prompt='Whatcha Buyin?'
               label='name'
               value={value}
               onChange={val => setValue(val)}
             />
           </div>
+          <h2 className='description'>
+            Description:
+            <p className='description-text'>
+              {!isEmpty(value) && value.description}
+            </p>
+          </h2>
+          <h2 className='price'>
+            Price:
+            <p className='price-text'>
+              {value.price}{!isEmpty(value) && "G"}
+            </p>
+          </h2>
           {/* <Quantity /> */}
           {/* <TotalTab /> */}
       </div>
-  
     </div>
   )
 }

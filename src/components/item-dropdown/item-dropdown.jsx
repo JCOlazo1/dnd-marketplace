@@ -1,19 +1,50 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect, useRef } from 'react'
 
-import GENERAL_STORE_DATA from '../../store-items-data/general-store-data.json'
-import APOTHECARY_DATA from '../../store-items-data/apothecary-data.json'
-import ARMOURY_DATA from '../../store-items-data/armoury-data.json'
+const ItemDropdown = ({ 
+  items, 
+  label,
+  prompt, 
+  value, 
+  onChange 
+}) => {
+  const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState()
+  const ref = useRef(null);
 
-const ItemDropdown = () => {
+  // This 
+  useEffect(() => {
+    document.addEventListener("click", close);
+    return () => document.removeEventListener("click", close);
+  }, [])
 
-  const getData = () => {
-    console.log(GENERAL_STORE_DATA)
+
+  const close = (e) => {
+    setOpen(e && e.target === ref.current)
   }
 
   return (
     <div className='dropdown'>
-      <button onClick={getData}>Test</button>
+      <div className="control" onClick={() => setOpen(prev => !prev)}> {/* TOGGLE EFFECT */}
+        <div className="selected-value" ref={ref} >
+          {value ? value[label] : prompt}
+        </div>
+        <div className={`arrow ${open ? "open" : null}`} /> {/* using ternary operators to change the property of 'className' */}
+      </div>
+      <div className={`options ${open ? "open" : null}`}>
+        {
+          items.map((option) => (
+          <div 
+            key={option.id} 
+            className={`option ${value === option ? "selected" : null}`}
+            onClick={() => {
+              onChange(option)
+              setOpen(false);
+            }}
+          >
+            {option[label]}
+          </div>))
+        }
+      </div>
     </div>
   )
 }

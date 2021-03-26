@@ -20,8 +20,8 @@
         "description": "+4 AC, heavy armour"
       }
     ],
-    "weapons": {
-      "":{
+    "weapons": [
+      {
         "id": 1,
         "name": "Dagger",
         "price": 5,
@@ -51,7 +51,7 @@
         "price": 10,
         "description": "1d6 damage, one-handed"
       }
-    }
+    ]
   }
 }
 

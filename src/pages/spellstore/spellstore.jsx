@@ -1,11 +1,15 @@
 import React from 'react'
 
-const Spellstore = () => {
+ import SpellstoreDirectory from '../../components/directory/spellstore-directory/spellstore-directory'
+
+import './spellstore.styles.scss'
+
+const SpellStoreFront = () => {
   return (
-    <h1>
-      Spell Store
-    </h1>
+    <div className='overview'>
+      <SpellstoreDirectory />
+    </div>
   )
 }
 
-export default Spellstore
+export default SpellStoreFront

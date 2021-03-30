@@ -1,6 +1,6 @@
 {
-  "spell store": {
-    "offensive spells": [
+  "spellstore": {
+    "offensive_spells": [
       {
         "id": 1,
         "name": "Burning Hands",
@@ -9,12 +9,12 @@
       },
       {
         "id": 2,
-        "name": "Burning Hands",
+        "name": "Cone of Ice",
         "price": 50,
-        "description": "1d4 fire damage to target"
+        "description": "1d4 AoE ice damage in a 15ft cone"
       }
     ],
-    "support spells": [
+    "support_spells": [
       {
         "id": 1,
         "name": "Haste",

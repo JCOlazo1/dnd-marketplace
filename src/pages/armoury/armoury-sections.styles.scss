@@ -1,0 +1,20 @@
+a {
+  color: #80ffbf;
+
+  &:hover {
+    color: #00994d;
+  }
+}
+
+.dropdown {
+  color: #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+sections {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

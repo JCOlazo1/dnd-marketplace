@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MenuItem from '../menu-items/menu-item.component'
-import SignUp from '../../components/sign-up/sign-up' // DELETE AFTER TESTING, SIGNUP BUTTON WILL BE ELSEWHERE
+import SignUp from '../../components/sign-up/sign-up' 
 
 const Directory = () => {
   const [sections, setSections] = useState([{ title: '', imageUrl: '', id: '', linkUrl: '' }]);

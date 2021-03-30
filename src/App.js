@@ -1,6 +1,6 @@
 import Homepage from './pages/homepage/homepage.component'
 import GeneralStore from './pages/general store/general-store'
-import Armoury from './pages/armoury/armoury'
+import ArmouryFront from './pages/armoury/armoury-front'
 import Apothecary from './pages/apothecary/apothecary'
 import SpellStore from './pages/spellstore/spellstore'
 import { Route, BrowserRouter } from 'react-router-dom'
@@ -26,7 +26,7 @@ function App() {
         {/* Armoury */}
           <Route 
             path='/armoury'
-            component={Armoury}
+            component={ArmouryFront}
           />
         {/* Apothecary */}
           <Route 

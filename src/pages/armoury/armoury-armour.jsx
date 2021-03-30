@@ -1,12 +1,17 @@
-import React, { useState }  from 'react'
+import React, { useState, useEffect } from 'react'
 
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
-import ARMOURY_DATA from '../../store-items-data/armoury-data.json'
+import ARMOURY_ARMOUR_DATA from '../../store-items-data/armoury-data.json'
 
-import './armoury.styles.scss'
+import './armoury-sections.styles.scss'
 
-const Armoury = () => {
+const ArmouryArmour = () => {
   const [value, setValue] = useState([]);
+  const [mapArmour, setMapArmour] = useState([]);
+
+  useEffect(() => {
+    setMapArmour(ARMOURY_ARMOUR_DATA.armoury.armour)
+  }, [])
 
   const isEmpty = (obj) => {
     return Object.keys(obj).length === 0;
@@ -14,21 +19,21 @@ const Armoury = () => {
 
   return (
     <div className='overview'>
-      <h1>Armoury</h1>
+      <h1 className='header'>Armour</h1>
       <div className="options">
         <div className="cart-list">
           {/* <Cart /> */}
         </div>
         <div className="dropdown">
           <ItemDropdown 
-            items={ARMOURY_DATA}
+            items={mapArmour}
             label='name'
             value={value}
             onChange={val => setValue(val)}
           />
         </div>
         <h2 className='description'>
-          Descrption:
+          Description:
           <p className='description-text'>
             {!isEmpty(value) && value.description}
           </p>
@@ -42,11 +47,9 @@ const Armoury = () => {
         {/* <Quantity /> */}
         {/* <TotalTab /> */}
       </div>
-    </div>
-
       
-    
+    </div>
   )
 }
 
-export default Armoury
+export default ArmouryArmour

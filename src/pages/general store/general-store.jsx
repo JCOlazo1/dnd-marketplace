@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import GENERAL_STORE_DATA from '../../store-items-data/general-store-data.json'
 
+import Cart from '../../components/cart/cart'
+
+
 import './general-store.styles.scss'
 
 const GeneralStore = () => {
@@ -17,7 +20,6 @@ const GeneralStore = () => {
       <h1>General Store</h1>
       <div className='options'>
         <div className='cart-list'>
-          {/* <Cart /> */}
         </div>
           <div className='dropdown'>
             <ItemDropdown 
@@ -25,6 +27,11 @@ const GeneralStore = () => {
               label='name'
               value={value}
               onChange={val => setValue(val)}
+            />
+          </div>
+          <div className='cart'>
+            <Cart 
+              items={value}
             />
           </div>
           <h2 className='description'>
@@ -39,8 +46,6 @@ const GeneralStore = () => {
               {value.price}{!isEmpty(value) && "G"}
             </p>
           </h2>
-          {/* <Quantity /> */}
-          {/* <TotalTab /> */}
       </div>
     </div>
   )

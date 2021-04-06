@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import ARMOURY_ARMOUR_DATA from '../../store-items-data/armoury-data.json'
+import Cart from '../../components/cart/cart'
 
 import './armoury-sections.styles.scss'
 
@@ -21,9 +22,6 @@ const ArmouryArmour = () => {
     <div className='overview'>
       <h1 className='header'>Armour</h1>
       <div className="options">
-        <div className="cart-list">
-          {/* <Cart /> */}
-        </div>
         <div className="dropdown">
           <ItemDropdown 
             items={mapArmour}
@@ -32,6 +30,9 @@ const ArmouryArmour = () => {
             onChange={val => setValue(val)}
           />
         </div>
+        <Cart 
+          items={value}
+        />
         <h2 className='description'>
           Description:
           <p className='description-text'>
@@ -44,8 +45,6 @@ const ArmouryArmour = () => {
             {value.price}{!isEmpty(value) && "G"}
           </p>
         </h2>
-        {/* <Quantity /> */}
-        {/* <TotalTab /> */}
       </div>
       
     </div>

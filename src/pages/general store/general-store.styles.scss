@@ -73,3 +73,13 @@
   background-color: #f2f9fc;
   color: #333;
 }
+
+.add-button {
+  display: inline-block;
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}

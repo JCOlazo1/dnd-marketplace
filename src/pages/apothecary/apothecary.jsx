@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { GoldContext } from '../../App'
 
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import APOTHECARY_DATA from '../../store-items-data/apothecary-data.json'
@@ -8,6 +9,10 @@ import Cart from '../../components/cart/cart'
 import './apothecary.styles.scss'
 
 const Apothecary = () => {
+  // useContext variables
+  const { gold, setGold } = useContext(GoldContext);
+
+  // useState variables
   const [value, setValue] = useState([]); // Stores the value of selected item from dropdown
 
   const isEmpty = (obj) => {
@@ -17,6 +22,7 @@ const Apothecary = () => {
   return (
     <div className='overview'>
       <h1>Apothecary </h1>
+      <h3>Gold: {gold}G</h3>
       <div className="options">
           <div className='dropdown'>
             <ItemDropdown

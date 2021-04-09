@@ -3,13 +3,30 @@ import GeneralStore from './pages/general store/general-store'
 import ArmouryFront from './pages/armoury/armoury-front'
 import Apothecary from './pages/apothecary/apothecary'
 import SpellStore from './pages/spellstore/spellstore'
-import { Route, BrowserRouter } from 'react-router-dom'
-
 
 import './App.styles.scss'
 
-function App() {
+import React, { useState, createContext } from 'react'
+import { Route, BrowserRouter } from 'react-router-dom'
+
+export const GoldContext = createContext();
+export const UserContext = createContext();
+
+function App({ money }) {
+  const [gold, setGold] = useState(0);
+  const [user, setUser] = useState([{
+    user: '',
+    gold: 0, 
+    isLogged: false,
+    isThief: false
+  }])
+
   return (
+    // Lots of Providers:
+  <GoldContext.Provider value={{gold, setGold}}>
+  <UserContext.Provider value={{user, setUser}}>
+
+
     <BrowserRouter>
       <div className='App'>
         {/* Homepage */}
@@ -40,6 +57,14 @@ function App() {
           />
       </div>
     </BrowserRouter>
+
+
+
+  </UserContext.Provider>
+  </GoldContext.Provider>
+
+
+    
     
   );
 }

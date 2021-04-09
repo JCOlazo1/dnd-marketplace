@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Directory from '../../components/directory/directory.components'
+import Register from '../../components/register/register'
 
 import './homepage.styles.scss'
 
 const Homepage = () => {
   return (
-    <div className='homepage'>
+    <>
+      <Register />
       <Directory />
-    </div>
+    </>
   )
 }
 

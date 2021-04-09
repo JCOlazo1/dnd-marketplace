@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import SUPPORT_SPELLS_DATA from '../../store-items-data/spellstore-data.json'
+import Cart from '../../components/cart/cart'
 
 import './spellstore.styles.scss'
 
@@ -21,7 +22,6 @@ const SupportSpells = () => {
     <div className='overview'>
       <h1 className="header">SUPPORT SPELLS</h1>
       <div className="options">
-        <div className="cart-list">{/* <Cart /> */}</div>
         <div className="dropdown">
           <ItemDropdown 
             items={mapSupportSpells}
@@ -30,6 +30,9 @@ const SupportSpells = () => {
             onChange={val => setValue(val)}
           />
         </div>
+        <Cart 
+          items={value}
+        />
         <h2 className='description'>DESCRIPTION:</h2>
         <p className='description-text'>
           { !isEmpty(value) && value.description }

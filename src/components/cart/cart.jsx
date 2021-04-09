@@ -21,14 +21,6 @@ const Cart = ({ items }) => {
     setItemList([...itemList, selectedItem])
   }
 
-  const test = () => {
-    console.log(selectedItem.price);
-  }
-
-  const isEmpty = (obj) => {
-    return Object.keys(obj).length === 0;
-  }
-
   return (
     <div className='overview'>
       <ul className='item-list'>
@@ -48,7 +40,6 @@ const Cart = ({ items }) => {
       <h3>TOTAL:  ===  {totalPrice}G</h3>
       <button onClick={AddToCart}>Add to Cart</button>
       <button onClick={() => setItemList([])}>Clear Cart</button>
-      <button onClick={test}>Test</button>
     </div>
   )
 }

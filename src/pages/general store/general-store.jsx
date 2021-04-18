@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react'
-import { GoldContext } from '../../App'
+import React, { useState } from 'react'
 
 import ItemDropdown from '../../components/item-dropdown/item-dropdown'
 import GENERAL_STORE_DATA from '../../store-items-data/general-store-data.json'
@@ -10,11 +9,9 @@ import Cart from '../../components/cart/cart'
 import './general-store.styles.scss'
 
 const GeneralStore = () => {
-  // useContext variables
-  const { gold, setGold } = useContext(GoldContext);
-
   // useState variables
   const [value, setValue] = useState([]);
+
 
   const isEmpty = (obj) => {
     return Object.keys(obj).length === 0;
@@ -23,7 +20,6 @@ const GeneralStore = () => {
   return (
     <div className='overview'>
       <h1>General Store</h1>
-      <h3>Gold: {gold}G</h3>
       <div className='options'>
         <div className='cart-list'>
         </div>

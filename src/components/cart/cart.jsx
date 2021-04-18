@@ -1,6 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { GoldContext } from '../../App'
 
 const Cart = ({ items }) => {
+  // useContext variables
+  const { gold, setGold } = useContext(GoldContext); // from App.js
+
   const [selectedItem, setSelectedItem] = useState([]); // Stores the item selected by user from dropdown
   const [itemList, setItemList] = useState([]); // Stores the user's current shopping list
   const [totalPrice, setTotalPrice] = useState(0); // Updates total amount
@@ -21,8 +25,20 @@ const Cart = ({ items }) => {
     setItemList([...itemList, selectedItem])
   }
 
+  const Pay = () => {
+    if(totalPrice > gold) {
+      alert("Hey! You don't have enough Gold!");
+    }
+    else {
+      setGold(gold - totalPrice);
+      setItemList([]);
+    }
+    
+  }
+
   return (
     <div className='overview'>
+      <h4>User's Gold: {gold}G</h4>
       <ul className='item-list'>
         <ShoppingCart 
           items={itemList.map((item) => (
@@ -38,12 +54,15 @@ const Cart = ({ items }) => {
         />
       </ul>
       <h3>TOTAL:  ===  {totalPrice}G</h3>
+      
       <button onClick={AddToCart}>Add to Cart</button>
       <button onClick={() => setItemList([])}>Clear Cart</button>
+      <button onClick={Pay}>Pay Now</button>
     </div>
   )
 }
 
+// Helper function to display items in the user's cart
 const ShoppingCart = ({items}) => {
   return(
     <>

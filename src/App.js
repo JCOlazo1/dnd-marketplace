@@ -12,7 +12,7 @@ import { Route, BrowserRouter } from 'react-router-dom'
 export const GoldContext = createContext();
 export const UserContext = createContext();
 
-function App({ money }) {
+function App() {
   const [gold, setGold] = useState(0);
   const [user, setUser] = useState([{
     user: '',
@@ -70,3 +70,5 @@ function App({ money }) {
 }
 
 export default App;
+
+// JC's macbook was here

@@ -6,14 +6,14 @@ a {
   }
 }
 
-.dropdown {
-  color: #ccc;
+.dropdownCartDiv {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-sections {
+.dropdown {
+  color: #ccc;
   display: flex;
   flex-direction: column;
   align-items: center;

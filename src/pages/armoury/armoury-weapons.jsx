@@ -22,17 +22,17 @@ const ArmouryWeapons = () => {
     <div className='overview'>
       <h1 className='header'>Weapons</h1>
       <div className="options">
+        <div className="dropdownCartDiv">
         <div className="dropdown">
-         <ItemDropdown 
-          items={mapWeapons}
-          label='name'
-          value={value}
-          onChange={val => setValue(val)}
-         />
+          <ItemDropdown 
+            items={mapWeapons}
+            label='name'
+            value={value}
+            onChange={val => setValue(val)}
+          />
+          </div>
+          <Cart items={value} />
         </div>
-        <Cart 
-          items={value}
-        />
       <h2 className='description'>
         Description:
         <p className='description-text'>

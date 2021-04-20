@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GoldContext } from '../../App'
 
+import './cart.styles.scss'
+
 const Cart = ({ items }) => {
   // useContext variables
   const { gold, setGold } = useContext(GoldContext); // from App.js
@@ -42,14 +44,16 @@ const Cart = ({ items }) => {
       <ul className='item-list'>
         <ShoppingCart 
           items={itemList.map((item) => (
-            <>
+            <div className='item'>
               <p key={item.id}>
                 {item.name} ----- {item.price}G
               </p>
-              <button onClick={() => {
-                setItemList(currentItem => currentItem.filter(x => x.id !== item.id))
+              <button 
+                className='item-button'
+                onClick={() => {
+                  setItemList(currentItem => currentItem.filter(x => x.id !== item.id))
               }}>x</button>
-            </>
+            </div>
           ))}
         />
       </ul>

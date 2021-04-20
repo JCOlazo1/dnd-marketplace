@@ -22,19 +22,18 @@ const Apothecary = () => {
   return (
     <div className='overview'>
       <h1>Apothecary </h1>
-      <h3>Gold: {gold}G</h3>
       <div className="options">
+        <div className="dropdownCartDiv">
           <div className='dropdown'>
-            <ItemDropdown
-              items={APOTHECARY_DATA}
-              label='name'
-              value={value}
-              onChange={val => setValue(val)}
-            />
-          </div>
-            <Cart 
-              items={value}
-            />
+              <ItemDropdown
+                items={APOTHECARY_DATA}
+                label='name'
+                value={value}
+                onChange={val => setValue(val)}
+              />
+            </div>
+              <Cart items={value} />
+        </div>
           <h2 className='description'>
               Description:  
               <p className='description-text'> 

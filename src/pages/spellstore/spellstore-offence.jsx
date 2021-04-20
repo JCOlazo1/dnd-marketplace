@@ -22,17 +22,17 @@ const OffenceSpells = () => {
     <div className='overview'>
       <h1 className="header">OFFENCE SPELLS</h1>
       <div className="options">
-        <div className="dropdown">
-          <ItemDropdown 
-            items={mapOffenceSpells}
-            label='name'
-            value={value}
-            onChange={val => setValue(val)}
-          />
+        <div className="dropdownCartDiv">
+          <div className="dropdown">
+            <ItemDropdown 
+              items={mapOffenceSpells}
+              label='name'
+              value={value}
+              onChange={val => setValue(val)}
+            />
+          </div>
+          <Cart items={value} />
         </div>
-        <Cart 
-          items={value}
-        />
         <h2 className='description'>
           Description:
         </h2>

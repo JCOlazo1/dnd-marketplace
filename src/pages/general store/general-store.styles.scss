@@ -1,5 +1,11 @@
 // THEY SHOULD ALL HAVE THE SAME SCSS
 
+.dropdownCartDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .dropdown {
   position: relative;
   color: #333;
@@ -76,10 +82,4 @@
 
 .add-button {
   display: inline-block;
-}
-
-.cart {
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
 }

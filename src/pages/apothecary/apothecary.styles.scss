@@ -3,6 +3,12 @@
   font-size: 20px;
 }
 
+.dropdownCartDiv {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
 .price {
   display: flex;
   flex-direction: column;

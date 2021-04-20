@@ -23,18 +23,20 @@ const GeneralStore = () => {
       <div className='options'>
         <div className='cart-list'>
         </div>
+        <div className="dropdownCartDiv">
           <div className='dropdown'>
-            <ItemDropdown 
-              items={GENERAL_STORE_DATA} 
-              label='name'
-              value={value}
-              onChange={val => setValue(val)}
-            />
-          </div>
-          <div className='cart'>
-            <Cart 
-              items={value}
-            />
+              <ItemDropdown 
+                items={GENERAL_STORE_DATA} 
+                label='name'
+                value={value}
+                onChange={val => setValue(val)}
+              />
+            </div>
+            <div className='cart'>
+              <Cart 
+                items={value}
+              />
+            </div>
           </div>
           <h2 className='description'>
             Description:

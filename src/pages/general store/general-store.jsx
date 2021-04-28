@@ -33,7 +33,7 @@ const GeneralStore = () => {
               <p className='description-text'>
                 {!isEmpty(value) && value.description}
               </p>
-              <h2 className='title-header'>
+              <h2 className='price-header'>
                 Price:
                 <p className='price-text'>
                   {value.price}{!isEmpty(value) && "G"}
@@ -41,14 +41,11 @@ const GeneralStore = () => {
               </h2>
             </h2> 
           </div>
-
           <div className='cart'>
             <Cart 
               items={value}
             />
           </div>
-
-            
       </div>
     </div>
   )

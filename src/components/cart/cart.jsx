@@ -40,7 +40,7 @@ const Cart = ({ items }) => {
 
   return (
     <div className='overview'>
-      <h4>User's Gold: {gold}G</h4>
+      <h4 className='user-gold'>User's Gold: {gold}G</h4>
       <ul className='item-list'>
         <ShoppingCart 
           items={itemList.map((item) => (
@@ -57,7 +57,7 @@ const Cart = ({ items }) => {
           ))}
         />
       </ul>
-      <h3>TOTAL:  ===  {totalPrice}G</h3>
+      <h3 className='total'>TOTAL:  ===  {totalPrice}G</h3>
       
       <button onClick={AddToCart}>Add to Cart</button>
       <button onClick={() => setItemList([])}>Clear Cart</button>

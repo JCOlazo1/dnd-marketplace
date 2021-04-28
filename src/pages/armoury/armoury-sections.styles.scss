@@ -6,10 +6,23 @@ a {
   }
 }
 
-.dropdownCartDiv {
+.options {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+
+  .cart {
+    flex-direction: row;
+    width: 25%;
+  }
+}
+
+.dropdown-description-price {
+  flex-direction: column;
+  width: 50%;
+
+  .description-header {
+    font-size: x-large;
+  }
 }
 
 .dropdown {

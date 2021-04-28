@@ -22,33 +22,30 @@ const ArmouryWeapons = () => {
     <div className='overview'>
       <h1 className='header'>Weapons</h1>
       <div className="options">
-        <div className="dropdownCartDiv">
-        <div className="dropdown">
+        <div className="dropdown-description-price">
           <ItemDropdown 
             items={mapWeapons}
             label='name'
             value={value}
             onChange={val => setValue(val)}
           />
-          </div>
+          <h2 className='description-header'>
+            Description:
+            <p className='description-text'>
+              {!isEmpty(value) && value.description}
+            </p>
+          </h2>
+          <h2 className='price-header'>
+            Price:
+            <p className='price-text'>
+              {value.price}{!isEmpty(value) && "G"}
+            </p>
+          </h2>
+        </div>
+        <div className="cart">
           <Cart items={value} />
         </div>
-      <h2 className='description'>
-        Description:
-        <p className='description-text'>
-          {!isEmpty(value) && value.description}
-        </p>
-      </h2>
-      <h2 className='price'>
-        Price:
-        <p className='price-text'>
-          {value.price}{!isEmpty(value) && "G"}
-        </p>
-      </h2>
-      </div>
-      {/* <Quantity /> */}
-      {/* <TotalTab /> */}
-      
+      </div>    
     </div>
   )
 }

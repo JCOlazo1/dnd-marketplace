@@ -22,30 +22,28 @@ const OffenceSpells = () => {
     <div className='overview'>
       <h1 className="header">OFFENCE SPELLS</h1>
       <div className="options">
-        <div className="dropdownCartDiv">
-          <div className="dropdown">
+          <div className="dropdown-description-price">
             <ItemDropdown 
               items={mapOffenceSpells}
               label='name'
               value={value}
               onChange={val => setValue(val)}
             />
+            <h2 className='description-header'>
+              Description:
+            </h2>
+            <p className='description-text'>
+              { !isEmpty(value) && value.description }
+            </p>
+            <h2 className='price-header'>Price:</h2>
+            <p className='price-text'>
+              {value.price}{!isEmpty(value) && "G"}
+            </p>
           </div>
-          <Cart items={value} />
-        </div>
-        <h2 className='description'>
-          Description:
-        </h2>
-        <p className='description-text'>
-          { !isEmpty(value) && value.description }
-        </p>
-        <h2 className='price'>Price:</h2>
-        <p className='price-text'>
-          {value.price}{!isEmpty(value) && "G"}
-        </p>
+          <div className="cart">
+            <Cart items={value} />
+          </div>
       </div>
-      {/* <Quantity /> */}
-      {/* <TotalTab /> */}
     </div>
   )
 }

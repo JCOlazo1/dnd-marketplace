@@ -22,29 +22,27 @@ const SupportSpells = () => {
     <div className='overview'>
       <h1 className="header">SUPPORT SPELLS</h1>
       <div className="options">
-        <div className="dropdownCartDiv">
-        <div className="dropdown">
+
+        <div className="dropdown-description-price">
           <ItemDropdown 
             items={mapSupportSpells}
             label='name'
             value={value}
             onChange={val => setValue(val)}
           />
+          <h2 className='description'>DESCRIPTION:</h2>
+            <p className='description-text'>
+              { !isEmpty(value) && value.description }
+            </p>
+          <h2 className='price'>Price:</h2>
+            <p className='price-text'>
+              {value.price}{!isEmpty(value) && "G"}
+            </p>
         </div>
-        <Cart items={value} />
+        <div className="cart">
+          <Cart items={value} />
         </div>
-        <h2 className='description'>DESCRIPTION:</h2>
-        <p className='description-text'>
-          { !isEmpty(value) && value.description }
-        </p>
-        <h2 className='price'>Price:</h2>
-        <p className='price-text'>
-          {value.price}{!isEmpty(value) && "G"}
-        </p>
-      </div>
-      {/* <Quantity /> */}
-      {/* <TotalTab /> */}
-      
+      </div>      
     </div>
   )
 }

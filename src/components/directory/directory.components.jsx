@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import MenuItem from '../menu-items/menu-item.component'
 import SignUp from '../../components/sign-up/sign-up' 
 
+import './directory.styles.scss'
+
 const Directory = () => {
   const [sections, setSections] = useState([{ title: '', imageUrl: '', id: '', linkUrl: '' }]);
 

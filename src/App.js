@@ -18,7 +18,8 @@ function App() {
     user: '',
     gold: 0, 
     isLogged: false,
-    isThief: false
+    isThief: false,
+    numberOfTimesStolen: 0
   }])
 
   return (

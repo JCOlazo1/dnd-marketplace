@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { GoldContext } from '../../App'
+import LeaveButton from '../leave-store-button/leave-button'
 
 import './cart.styles.scss'
 
@@ -35,11 +36,13 @@ const Cart = ({ items }) => {
       setGold(gold - totalPrice);
       setItemList([]);
     }
-    
   }
 
   return (
     <div className='overview'>
+      <div className="leave-button"> 
+        <LeaveButton cartItems={itemList} /> 
+      </div>
       <h4 className='user-gold'>User's Gold: {gold}G</h4>
       <ul className='item-list'>
         <ShoppingCart 

@@ -10,23 +10,23 @@ import React, { useState, createContext } from 'react'
 import { Route, BrowserRouter } from 'react-router-dom'
 
 export const GoldContext = createContext();
-export const UserContext = createContext();
+export const UsernameContext = createContext();
+export const ThiefContext = createContext();
+export const StealingCountContext = createContext();
+
 
 function App() {
   const [gold, setGold] = useState(0);
-  const [user, setUser] = useState([{
-    user: '',
-    gold: 0, 
-    isLogged: false,
-    isThief: false,
-    numberOfTimesStolen: 0
-  }])
+  const [username, setUsername] = useState("");
+  const [isThief, setIsThief] = useState(false);
+  const [stealingCount, setStealingCount] = useState(0);
 
   return (
     // Lots of Providers:
   <GoldContext.Provider value={{gold, setGold}}>
-  <UserContext.Provider value={{user, setUser}}>
-
+  <UsernameContext.Provider value={{username, setUsername}}>
+  <ThiefContext.Provider value={{isThief, setIsThief}}>
+  <StealingCountContext.Provider value={{stealingCount, setStealingCount}}>
 
     <BrowserRouter>
       <div className='App'>
@@ -59,14 +59,10 @@ function App() {
       </div>
     </BrowserRouter>
 
-
-
-  </UserContext.Provider>
+  </StealingCountContext.Provider>
+  </ThiefContext.Provider>
+  </UsernameContext.Provider>
   </GoldContext.Provider>
-
-
-    
-    
   );
 }
 

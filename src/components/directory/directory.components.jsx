@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { UsernameContext } from '../../App'
 import MenuItem from '../menu-items/menu-item.component'
-import SignUp from '../../components/sign-up/sign-up' 
 
 import './directory.styles.scss'
 
 const Directory = () => {
+  // Accessing useContext properties:
+  const { username } = useContext(UsernameContext);
+
+  // useState variables
   const [sections, setSections] = useState([{ title: '', imageUrl: '', id: '', linkUrl: '' }]);
 
   useEffect(() => {
@@ -40,16 +44,15 @@ const Directory = () => {
   return (
     <div className='directory-menu'>
       <>
-      <h1>WELCOME TO THE MARKETPLACE</h1>
-      <SignUp />
-      {
-        sections.map(({ id, ...otherStuff }) => (
-          <MenuItem 
-            key={id}
-            {...otherStuff}
-          />
-        ))
-      }
+        <h1>{`WELCOME TO THE MARKETPLACE, ${username}!`}</h1>
+        {
+          sections.map(({ id, ...otherStuff }) => (
+            <MenuItem 
+              key={id}
+              {...otherStuff}
+            />
+          ))
+        }
       </>
     </div>
   )

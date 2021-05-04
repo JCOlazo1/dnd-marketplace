@@ -14,21 +14,21 @@ const LeaveButton = ({ cartItems }) => {
     console.log("handleClick is clicked")
   }
 
-  // const payOrSteal = () => {
-  //   confirmAlert({
-  //     title: 'Shopkeeper says: ',
-  //     message: 'Hey, you\'ve still got some unpaid items in your bag, pal!',
-  //     buttons: [
-  //       {
-  //         label: 'Stay and pay'
-  //       },
-  //       {
-  //         label: 'Steal!',
-  //         onClick: () => goHome()
-  //       }
-  //     ]
-  //   })
-  // }
+  const payOrSteal = () => {
+    confirmAlert({
+      title: 'Shopkeeper says: ',
+      message: 'Hey, you\'ve still got some unpaid items in your bag, pal!',
+      buttons: [
+        {
+          label: 'Stay and pay'
+        },
+        {
+          label: 'Steal!',
+          onClick: () => goHome()
+        }
+      ]
+    })
+  }
 
   const payOrSteal2 = () => {
     confirmAlert({
@@ -40,7 +40,7 @@ const LeaveButton = ({ cartItems }) => {
               Hey, you've still got some unpaid items in your bag, pal!
             </p>
             <button onClick={onClose}>Stay and pay</button>
-            <button onClick={goHome}>Steal!</button>
+            <button onClick={goHome}>Steal!</button> {/* "stealer" message persist after leaving the shop */}
           </div>
         );
       }

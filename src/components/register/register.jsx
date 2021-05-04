@@ -1,29 +1,48 @@
 import React, { useState, useContext } from 'react'
-import { GoldContext, UserContext } from '../../App'
+import { GoldContext, UsernameContext } from '../../App'
 
 const Register = () => {
   // Accessing our 'subscription' props from App.js with useContext
   const { gold, setGold } = useContext(GoldContext);
+  const { username, setUsername } = useContext(UsernameContext);
   
   // useState variables
   const [goldInput, setGoldInput] = useState(0);
+  const [usernameInput, setUsernameInput] = useState();
 
   const UserInputsGold = (e) => {
-    setGoldInput(e.target.value)
+    if(e.target.value >= 27000) {
+      alert("The DM doesn't believe you're carrying that much.")
+    } else {
+      setGoldInput(e.target.value)
+    }
+    
+  }
+
+  const UserInputsName = (e) => {
+    setUsernameInput(e.target.value)
   }
 
 
   return (
     <div className='register'>
+      <div className="set-username">
+        Enter your character's name:
+        <input 
+          onChange={UserInputsName}
+        />
+        <button onClick={() => setUsername(usernameInput)}>Add</button>
+        <br />
+      </div>
+
       <div className="set-gold">
         Gold carrying:
         <input 
-          type={Number}
           onChange={UserInputsGold}
         />
         <button onClick={() => setGold(goldInput)}>Add</button>
         <br />
-        Gold: {gold}G
+        {gold === 0 ? null :`Gold: ${gold}G`}
       </div>
     </div>
   )

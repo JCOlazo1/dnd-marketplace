@@ -17,6 +17,8 @@ services:
       - 8000:8000
     depends_on:
       - db
+    environment:
+      - "ENV_PATH=production.env"
 
   db:
     image: postgres

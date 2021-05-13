@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 django = "~=3.2.3"
 environs = {version = "~=9.3.2", extras = ["django"]}
+psycopg2 = "==2.8.6"
 
 [dev-packages]
 

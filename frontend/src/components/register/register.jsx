@@ -29,9 +29,11 @@ const Register = () => {
       <div className="set-username">
         Enter your character's name:
         <input 
+          type='text'
+          id='title'
           onChange={UserInputsName}
         />
-        <button onClick={() => setUsername(usernameInput)}>Add</button>
+        <button onClick={() => setUsername(usernameInput)}>Enter Marketplace</button>
         <br />
       </div>
 

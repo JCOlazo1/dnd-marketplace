@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - 3000:80
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+
+  backend:
+    build: .
+    command: python /src/manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/src
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    environment:
+      - "ENV_PATH=production.env"
+
+  db:
+    image: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+
+volumes:
+  postgres_data:

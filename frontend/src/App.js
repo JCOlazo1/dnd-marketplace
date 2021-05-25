@@ -21,22 +21,7 @@ function App() {
   const [username, setUsername] = useState("");
   const [isThief, setIsThief] = useState(false);
   const [stealingCount, setStealingCount] = useState(0);
-  
-  // SHOWING BACKEND MESSAGE TO FRONTEND:
-  // // API state:
-  // const [apiMessage, setApiMessage] = useState({apiResponse: ""})
 
-  // // Call API:
-  // const callAPI = () => {
-  //   fetch('https://localhost:9000/testAPI')
-  //     .then(res => res.text())
-  //     .then(res => setApiMessage([{apiResponse: res}]))
-  // }
-
-  // // useEffect for API:
-  // useEffect(() => {
-  //   callAPI();
-  // }, [])
 
   return (
     // Lots of Providers:
